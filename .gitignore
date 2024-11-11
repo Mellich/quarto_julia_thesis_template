@@ -1,0 +1,35 @@
+#Quarto specific temporary folders
+/.quarto/
+/_output/
+**_files
+# Quarto extensions directory
+_extensions
+
+# Other files and folders that should not be included
+/.luarc.json
+/other_theses/
+.DS_Store
+.jupyter_cache
+*.zip
+
+# Temporary Quarto files and folders
+**_files
+*.ipynb
+*.ps
+*.pdf
+*.js
+*.css
+*.woff
+/.quarto/
+/.vscode/
+/_output/
+
+#Latex temporary files
+*.aux
+*.lof
+*.log
+*.lot
+*.tex
+!template/*.tex
+*.toc
+*.html

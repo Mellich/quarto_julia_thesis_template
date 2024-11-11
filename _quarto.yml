@@ -1,0 +1,91 @@
+project:
+  output-dir: _output
+  type: book
+
+#mainfont: Gentium Book Plus
+#sansfont: Open Sans
+date-format: long
+
+format:
+  pdf:
+    documentclass: book
+    pdf-engine: pdflatex
+    header-includes:
+      - \usepackage{mathtools}
+      - \DeclareUnicodeCharacter{03BC}{$\mu$}
+    template-partials: 
+      - template/tables.tex
+      - template/before-body.tex
+      - template/before-title.tex
+      - template/toc.tex
+      - template/before-bib.tex
+      - template/biblio.tex
+    cite-method: biblatex
+    biblio-style: ieee
+    keep-tex: true
+    fontsize: 11pt
+  html:
+    theme: cosmo
+    csl: ieee.csl
+
+book:
+  title: "A very nice Thesis Title"
+  subtitle: Bachelor Thesis/Master Thesis/Dissertation
+  author: You
+  chapters:
+    - index.qmd
+    - chapters/01-chapter1.qmd
+    - chapters/02-chapter2.qmd
+    - chapters/06-endmatter/12-acronyms.qmd
+  appendices:
+    - chapters/06-endmatter/14-appendix.qmd
+  abstract: |
+    Type your abstract here
+zusammenfassung: |
+  Zusammenfassung auf deutsch
+
+acknowledgements: |
+  Some acknowledgements?
+
+
+
+widmung: |
+  Widmung
+  
+short-title: Short title
+faculty: Computer Science, Electrical Engineering and Mathematics
+university: Paderborn University
+date: today
+degree: Dr. rer. nat.
+titlepage-rule-color: 0025aa
+titlepage-logo: template/logo.pdf
+logo-width: 50mm
+toc: true
+toc-depth: 2
+toc-own-page: true
+toc-title: Table of Contents
+lof: true
+lot: true
+lol: true
+titlepage: true
+
+resource-path: 
+  - figures
+
+jupyter: julia-1.11
+
+execute: 
+  cache: true
+  echo: false
+  error: false
+
+acronyms:
+  loa_title: ""
+  insert_loa: false
+  fromfile: ./acronyms.yaml
+
+filters:
+  - acronyms
+
+bibliography:
+  - ./references.bib

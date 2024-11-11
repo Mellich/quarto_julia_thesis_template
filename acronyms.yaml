@@ -1,0 +1,11 @@
+---
+acronyms:
+  keys:
+    - shortname: FPGA
+      longname: Field Programmable Gate Array
+    - shortname: HPC
+      longname: High Performance Computing
+    - shortname: GPU
+      longname: Graphics Processing Unit
+---
+

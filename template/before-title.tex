@@ -1,0 +1,53 @@
+$if(geometry)$
+$else$
+\usepackage[margin=2.5cm,includehead=true,includefoot=true,centering]{geometry}
+$endif$
+\usepackage{setspace}
+\usepackage{calligra}
+\usepackage[T1]{fontenc}
+\usepackage[export]{adjustbox}
+% \usepackage[nottoc]{tocbibind}
+\usepackage{tocbibind}
+% Fix for XeLatex PDF/A generation
+% \let\pdfcreationdate=\creationdate
+\usepackage[a-1b]{pdfx}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{}
+\fancyhead[LO]{\leftmark}
+\fancyhead[RO]{\thepage}
+\fancyhead[RE]{\rightmark}
+\fancyhead[LE]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\addtolength{\headheight}{2em}
+
+\let\paragraph\oldparagraph
+\let\subparagraph\oldsubparagraph
+% Set Title and Section fonts
+\usepackage{titlesec}
+% % Define light and dark Microsoft blue colours
+\definecolor{UPBBlue}{HTML}{$titlepage-rule-color$}
+% % Define a new fontfamily for the subsubsection font
+% % Don't use \fontspec directly to change the font
+% % \newfontfamily\subsubsectionfont[Color=MSLightBlue]{Times New Roman}
+% % Set formats for each heading level
+\titleformat
+{\chapter} % command
+[display] % shape
+{\huge\bfseries\sffamily} % format
+{\fontsize{50}{60}\selectfont \bfseries\filleft\thechapter} % label
+{0ex} % sep
+{
+    \rule{\textwidth}{4pt}
+    \vspace{1ex}
+} % before-code
+[
+% \vspace{-1ex}%
+% \rule{\textwidth}{4pt}
+] % after-code
+\titleformat*{\section}{\Large\bfseries\sffamily}
+\titleformat*{\subsection}{\large\bfseries\sffamily}
+\titleformat*{\subsubsection}{\itshape\bfseries\sffamily}
+
